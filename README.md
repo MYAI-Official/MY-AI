@@ -1,2 +1,2 @@
 # MY-AI
-Thz Best Customer Support On Earth
+The Best Customer Support On Earth
