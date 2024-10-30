@@ -1,97 +1,290 @@
-/* General body styling */
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
+/* Base styles */
+:root {
+    --primary: #0f33ff;
+    --gray-50: #f9fafb;
+    --gray-600: #4b5563;
+    --gray-900: #111827;
+  }
+  
+  * {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    box-sizing: border-box;
   }
   
-  /* Header styling */
-  header {
-    background-color: #0056b3;
-    color: white;
-    padding: 40px 20px;
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Header styles */
+  .header {
     text-align: center;
+    margin-bottom: 2rem;
   }
   
-  header h1 {
-    font-size: 2.5em;
-    margin: 0;
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
   
-  header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-  }
-  
-  /* Case studies section styling */
-  #case-studies {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    max-width: 800px;
+  .header p {
+    font-size: 1.125rem;
+    color: #f9fafb;
+    max-width: 36rem;
     margin: 0 auto;
   }
   
-  /* Individual case study card styling */
-  .case-study {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.2s;
+  /* Case studies grid */
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
   
-  .case-study:hover {
-    transform: translateY(-5px);
-  }
-  
-  .case-study h2 {
-    font-size: 1.8em;
-    color: #0056b3;
-    margin-bottom: 10px;
-  }
-  
-  .case-study p {
-    line-height: 1.6;
-    margin: 8px 0;
-  }
-  
-  .case-study strong {
-    color: #333;
-  }
-  
-  /* Quote styling */
-  .case-study p strong:before {
-    content: '“';
-    font-size: 1.5em;
-    vertical-align: middle;
-    color: #0056b3;
-  }
-  
-  .case-study p strong:after {
-    content: '”';
-    font-size: 1.5em;
-    vertical-align: middle;
-    color: #0056b3;
-  }
-  
-  /* Footer styling */
-  footer {
+  /* Case study cards */
+  .case-study-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 1em;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 10px;
   }
   
-  footer a {
-    color: #0056b3;
+  .case-study-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .case-study-logo {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    min-height: 100px;
+  }
+  
+  .logo-wide {
+    max-width: 80%;
+    width: 250px;
+  }
+  
+  .case-study-logo:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .case-study-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
+  .achievement {
+    font-size: 1.125rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+  
+  .key-results {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .key-results p {
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+  
+  .read-more {
+    color: #0f33ff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    margin-top: auto;
   }
   
-  footer a:hover {
-    text-decoration: underline;
+  .read-more:hover {
+    color: #0f33ff;
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 2rem;
+  }
+  
+  .modal:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background: #1a1a1a;
+    max-width: 48rem;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 3rem;
+    position: relative;
+    margin: 2rem auto;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 1;
+  }
+  
+  .modal-header {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+  
+  .brand-info {
+    background: #1a1a1a;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .brand-logo {
+    height: 4rem;
+    margin-bottom: 2rem;
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    overflow: hidden;
+    padding-top: 100px;
+    position: relative;
+    top: 50px;
+  }
+  
+  .result-box {
+    background-color: #000000;
+    color: #80A1F8;
+    margin-top: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+    word-wrap: break-word;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .case-content section {
+    margin-bottom: 2rem;
+  }
+  
+  .case-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .case-content p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-section {
+    background: #1a1a1a;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .cta-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: #0f33ff;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+    color: #0f33ff;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .case-studies-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .case-studies-grid {
+      grid-template-columns: 2fr;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .modal-content {
+      padding: 2rem;
+      margin: 1rem;
+    }
+  
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .result-box {
+      padding: 1rem;
+    }
   }
