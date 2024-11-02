@@ -1264,11 +1264,11 @@ body {
 }
 
 .about--options>a:nth-child(2) {
-    background-image: url("../img/about-philosophy.jpg")
+    background-image: url("../img/about-DrBroner.png")
 }
 
 .about--options>a:nth-child(3) {
-    background-image: url("../img/about-history.jpg")
+    background-image: url("../img/about-Shinesty.png")
 }
 
 .about--options>a:hover h3 {
