@@ -1,0 +1,138 @@
+.calendar-container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    position: relative;
+    padding-bottom: 60px;
+    min-height: 600px;
+    margin: 0 auto;
+}
+
+.form-scroll-container {
+    max-height: calc(100vh - 300px);
+    height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+}
+
+/* Optional: Style the scrollbar */
+.form-scroll-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.form-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.form-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+/* Optional: Add some transition to form elements for smoother feel */
+form input, 
+form select, 
+form textarea {
+    transition: all 0.3s ease;
+}
+
+/* Scope headings and paragraphs to the calendar container */
+.calendar-container h1 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.calendar-container p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Scope form styles to the calendar container */
+.calendar-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.calendar-container label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.calendar-container input,
+.calendar-container select,
+.calendar-container textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.calendar-container select option {
+    color: #000;
+    background-color: #fff;
+}
+
+.calendar-container .cta {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px 45px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.calendar-container .cta svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(50px);
+    fill: #fff;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.calendar-container .cta .btn-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0f33ff;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.calendar-container .cta:hover svg {
+    transform: translateY(-50%) translateX(0);
+}
+
+.calendar-container .cta:hover .btn-background {
+    transform: scale(1.1);
+} 
