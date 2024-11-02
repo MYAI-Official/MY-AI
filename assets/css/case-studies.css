@@ -229,6 +229,20 @@
   .case-content section {
     margin-bottom: 2rem;
   }
+
+  .inline-text {
+    display: flex;
+    align-items: center;
+  }
+
+  .inline-text h3,
+  .inline-text p {
+    margin: 0;
+  }
+
+  .inline-text p {
+    margin-left: 8px;
+  }
   
   .case-content h3 {
     font-size: 1.25rem;
@@ -240,9 +254,17 @@
     color: #ffffff;
     margin-bottom: 1rem;
   }
+
+  .case-study-quote {
+    text-align: center;
+    margin: 50px auto;
+    width: 50%;
+    font-size: 1.5em;
+    font-style: italic;
+  }
   
   .cta-section {
-    background: #1a1a1a;
+    background: rgba(10, 10, 10, 0);
     border-radius: 1rem;
     padding: 2rem;
     text-align: center;
