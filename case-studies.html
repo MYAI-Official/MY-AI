@@ -811,6 +811,12 @@
     closeButtons.forEach(button => {
       button.addEventListener('click', function(e) {
         e.preventDefault(); // Prevent default anchor behavior
+        
+        // Find the parent modal and hide it
+        const modal = this.closest('.modal');
+        if (modal) {
+          modal.style.display = 'none';
+        }
       });
     });
   </script>
