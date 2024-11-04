@@ -60,15 +60,15 @@
                 <img src="assets/img/9.png" alt="Welcome">
               </div>
               <div class="intro--options">
-                <a href="#0">
+                <a data-link="">
                   <h3>Effortless Online Shopping</h3>
                   <p>Shopping online should feel as personal and effortless as visiting your favorite store.</p>
                 </a>
-                <a href="#0">
+                <a data-link="">
                   <h3>GROWTH</h3>
                   <p>Drive more revenue with a seamless customer shopping experience</p>
                 </a>
-                <a href="#0">
+                <a data-link="">
                   <h3>THE BEST CUSTOMER EXPERIENCE</h3>
                   <p>MYAI equips your brand with the tools to deliver exceptional customer experiences that drive growth for your online store.</p>
                 </a>
@@ -246,5 +246,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
+<script>
+  document.querySelector('.intro--options').addEventListener('click', function(e) {
+    if (e.target.closest('a')) {
+      e.preventDefault();
+    }
+  });
+</script>
 </body>
 </html>
