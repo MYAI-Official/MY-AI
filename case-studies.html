@@ -804,18 +804,29 @@
     
   </div>
   <script>
-    // Get all close buttons
+    // Get all close buttons and read-more links
     const closeButtons = document.querySelectorAll('.modal-close');
+    const readMoreLinks = document.querySelectorAll('.read-more');
     
     // Add click event listener to each close button
     closeButtons.forEach(button => {
       button.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        
-        // Find the parent modal and hide it
+        e.preventDefault();
         const modal = this.closest('.modal');
         if (modal) {
           modal.style.display = 'none';
+        }
+      });
+    });
+  
+    // Add click event listener to each read more link
+    readMoreLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modalId = this.getAttribute('href');
+        const modal = document.querySelector(modalId);
+        if (modal) {
+          modal.style.display = 'block';
         }
       });
     });
