@@ -81,31 +81,25 @@
               <div class="work--lockup">
                 <ul class="slider">
                   <li class="slider--item slider--item-left">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="assets/img/yassine.png" alt="YASSINE">
-                      </div>
-                      <p class="slider--item-title">Yassine</p>
-                      <p class="slider--item-description">Customer Experience Engineer</p>
-                    </a>
+                    <div class="slider--item-image">
+                      <img src="assets/img/yassine.png" alt="YASSINE">
+                    </div>
+                    <p class="slider--item-title">Yassine</p>
+                    <p class="slider--item-description">Customer Experience Engineer</p>
                   </li>
                   <li class="slider--item slider--item-center">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="assets/img/hamza.png" alt="HAMZA">
-                      </div>
-                      <p class="slider--item-title">Hamza</p>
-                      <p class="slider--item-description">Customer Satisfaction Specialist</p>
-                    </a>
+                    <div class="slider--item-image">
+                      <img src="assets/img/hamza.png" alt="HAMZA">
+                    </div>
+                    <p class="slider--item-title">Hamza</p>
+                    <p class="slider--item-description">Customer Satisfaction Specialist</p>
                   </li>
                   <li class="slider--item slider--item-right">
-                    <a href="#0">
-                      <div class="slider--item-image">
-                        <img src="assets/img/hachimi.png" alt="Alex Nowak">
-                      </div>
-                      <p class="slider--item-title">Hachimi</p>
-                      <p class="slider--item-description">Marketing Specialist</p>
-                    </a>
+                    <div class="slider--item-image">
+                      <img src="assets/img/hachimi.png" alt="Alex Nowak">
+                    </div>
+                    <p class="slider--item-title">Hachimi</p>
+                    <p class="slider--item-description">Marketing Specialist</p>
                   </li>
                 </ul>
                 <div class="slider--prev">
@@ -253,10 +247,38 @@
     }
   });
 </script>
+
 <script>
+  // Disable right-click
   document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
   });
+
+  // Disable dragging of images
+  document.querySelectorAll("img").forEach(img => {
+      img.ondragstart = function() { return false; };
+  });
+
+  // Disable specific key combinations
+  document.addEventListener('keydown', function(e) {
+      // Disable F12
+      if (e.key === "F12") {
+          e.preventDefault();
+      }
+      // Disable Ctrl+Shift+I (Chrome DevTools)
+      if (e.ctrlKey && e.shiftKey && e.key === "I") {
+          e.preventDefault();
+      }
+      // Disable Ctrl+Shift+J (Console)
+      if (e.ctrlKey && e.shiftKey && e.key === "J") {
+          e.preventDefault();
+      }
+      // Disable Ctrl+U (View source)
+      if (e.ctrlKey && e.key === "U") {
+          e.preventDefault();
+      }
+  });
 </script>
+
 </body>
 </html>
