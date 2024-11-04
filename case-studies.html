@@ -116,7 +116,7 @@
 
       <!-- 9. CROSSNET CASE STUDY -->
       <div class="case-study-card">
-        <img src="assets/img/MNML.png" 
+        <img src="assets/img/CROSSNET.png" 
              alt="CROSSNET" 
              class="case-study-logo logo-wide"
              width="250"
@@ -803,5 +803,16 @@
     </div>
     
   </div>
+  <script>
+    // Get all close buttons
+    const closeButtons = document.querySelectorAll('.modal-close');
+    
+    // Add click event listener to each close button
+    closeButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+      });
+    });
+  </script>
 </body>
 </html>
